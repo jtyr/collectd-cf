@@ -25,10 +25,14 @@ class CurrencyFair():
         ret = {}
 
         if 'calculator' in data:
-            for key in keys:
-                if key in data['calculator']:
-                    ret[key] = data['calculator'][key]
-                else:
-                    ret[key] = None
+            if 'ALL' in keys:
+                for ckey in data['calculator']:
+                    ret[ckey] = data['calculator'][ckey]
+            else:
+                for key in keys:
+                    if key in data['calculator']:
+                        ret[key] = data['calculator'][key]
+                    else:
+                        ret[key] = None
 
         return ret

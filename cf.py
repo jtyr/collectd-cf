@@ -37,10 +37,10 @@ def parse_arguments():
     parser.add_argument(
         '-k', '--keys',
         default='cfRate',
-        metavar='NUM',
+        metavar='STR',
         help=(
-            'list of keys from the JSON message separated by comma '
-            '(default: cfRate)'))
+            'list of keys from the JSON message separated by comma. Use ALL '
+            'to show all keys. (default: cfRate)'))
     parser.add_argument(
         '-v', '--verbose',
         action='store_true',
@@ -80,8 +80,8 @@ def main():
         sys.exit(1)
 
     # Print results
-    for key in keys:
-        print '%s: %s' % (key, values[key])
+    for key, value in values.iteritems():
+        print '%s: %s' % (key, value)
 
     log.debug('END')
 
