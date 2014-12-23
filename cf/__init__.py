@@ -18,7 +18,9 @@ class CurrencyFair():
             'buysell=%s' %
             (self.frm, self.to, self.amount, self.direction))
 
-        response = urllib2.urlopen(url)
+        request = urllib2.Request(url)
+        request.add_header('Referer', 'https://www.currencyfair.com/')
+        response = urllib2.urlopen(request)
         content = response.read()
         data = json.loads(content)
 
