@@ -33,8 +33,10 @@ Configure the CurrencyFair plugin:
     <Module "collectd-cf">
         # Label  From  To    Amount  Dir    Reciprocal
         GBPCZK  "GBP" "CZK" "1000"  "SELL" "NO"
-        # Here you can specify even more currencies:
+        # Another currency
         #CZKGBP  "CZK" "GBP" "1000"  "SELL" "YES"
+        # Custom collection interval (5 mins)
+        #Interval: 300
     </Module>
 </Plugin>
 ```
