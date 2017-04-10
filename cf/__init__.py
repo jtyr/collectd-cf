@@ -1,5 +1,11 @@
 import json
-import urllib2
+
+try:
+    from urllib2 import Request
+    from urllib2 import urlopen
+except ImportError:
+    from urllib.request import Request
+    from urllib.request import urlopen
 
 
 class CurrencyFair():
@@ -18,9 +24,9 @@ class CurrencyFair():
             'buysell=%s' %
             (self.frm, self.to, self.amount, self.direction))
 
-        request = urllib2.Request(url)
+        request = Request(url)
         request.add_header('Referer', 'https://www.currencyfair.com/')
-        response = urllib2.urlopen(request)
+        response = urlopen(request)
         content = response.read()
         data = json.loads(content)
 

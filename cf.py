@@ -80,8 +80,8 @@ def main():
         sys.exit(1)
 
     # Print results
-    for key, value in values.iteritems():
-        print '%s: %s' % (key, value)
+    for key, value in values.items():
+        print('%s: %s' % (key, value))
 
     log.debug('END')
 

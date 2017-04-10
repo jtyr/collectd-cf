@@ -78,7 +78,8 @@ cfRate: 34.66
 Dependencies
 ------------
 
-- `urllib2`
+- `urllib2` for Python v2
+- `urllib` for Python v3
 
 
 Sources
